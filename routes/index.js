@@ -5,7 +5,7 @@ var User = require("../models/user");
 
 //LANDING PAGE
 router.get("/", function(req, res){
-   res.render("landing"); 
+   res.render("landing");
 });
 
 //===================================
@@ -14,7 +14,7 @@ router.get("/", function(req, res){
 
 //NEW - show register form
 router.get("/register", function(req, res){
-   res.render("register"); 
+   res.render("register");
 });
 
 //CREATE - handle sign ups
@@ -26,8 +26,8 @@ router.post("/register", function(req, res){
             return res.render("register");
         }
         passport.authenticate("local")(req, res, function(){
-            req.flash("success", "Welcome to YelpCamp " + user.username);
-            res.redirect("/campgrounds");
+            req.flash("success", "Welcome to Car Kiosk " + user.username);
+            res.redirect("/");
         });
     });
 });
@@ -38,9 +38,9 @@ router.get("/login", function(req, res){
 });
 
 //CREATE - handling logins
-router.post("/login", passport.authenticate("local", 
+router.post("/login", passport.authenticate("local",
     {
-        successRedirect: "/campgrounds", 
+        successRedirect: "/",
         failureRedirect: "/login"
     }), function(req, res){
 });
@@ -49,7 +49,7 @@ router.post("/login", passport.authenticate("local",
 router.get("/logout", function(req, res){
    req.logout();
    req.flash("success", "Logged you out!");
-   res.redirect("/campgrounds");
+   res.redirect("/");
 });
 
 module.exports = router;

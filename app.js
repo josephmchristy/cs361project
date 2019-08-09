@@ -11,7 +11,7 @@ var express     = require("express"),
 var	indexRoutes = require("./routes/index");
 
 
-var url = process.env.DATABASEURL || 'mongodb+srv://car_key:' + process.env.MONGO_ATLAS_PW + '@cluster0-scb5m.mongodb.net/test?retryWrites=true&w=majority'
+var url = process.env.DATABASEURL || 'mongodb+srv://car_key:car_key@cluster0-scb5m.mongodb.net/test?retryWrites=true&w=majority'
 mongoose.connect(url, {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");

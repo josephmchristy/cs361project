@@ -9,6 +9,7 @@ var express     = require("express"),
     User        = require("./models/user");
 
 var	indexRoutes = require("./routes/index");
+var carRoutes		= require("./routes/car");
 
 
 var url = process.env.DATABASEURL || 'mongodb+srv://car_key:car_key@cluster0-scb5m.mongodb.net/test?retryWrites=true&w=majority'
@@ -39,6 +40,7 @@ app.use(function(req, res, next){
 });
 
 app.use("/", indexRoutes);
+app.use("/car", carRoutes);
 
 app.listen(process.env.PORT || 2784, process.env.IP, function(){
     console.log("YelpCamp Server has started!");

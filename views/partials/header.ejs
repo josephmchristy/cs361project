@@ -18,10 +18,9 @@
 								<li><a href="#">Signed in as <%= currentUser.username %></a></li>
 						<% } %>
 		      <li><a href="/insertkey">Insert Key</a><li>
-		      <li><a href="/selection">Purchase a Car</a><li>
+		      <li><a href="/selection">Select a Car</a><li>
 		    </ul>
 
-    <div class="container">
         <% if(error && error.length > 0){ %>
             <div class="alert alert-danger" role="alert">
                 <%= error %>

@@ -3,18 +3,21 @@
 <h1>Test Drive</h1>
 
 <h3>Please Place Your License in the Kiosk to be Scanned.</h3>
-<p>Please press "Test Drive!", press okay on the alert, then start your test drive timer.</p>
+<p>Please dispense key then start your test drive.</p>
 
-<button onclick="keydispense()" type="button">Test Drive!</button>
-<button type="button" onclick="location.href = '/alarm';">Driving Timer</button>
-
-
-
-<script>
-function keydispense() {
-    alert("Key has been dispensed!");
-}
-</script>
-
+<button onclick="keydispense(this)" type="button">Dispense Key</button>
+<button type="button" onclick="location.href = '/alarm';">Go For A Drive</button>
+<button onclick = "returncar()" type="button">Return Car</button>
 
 <% include partials/footer %>
+
+<script>
+function keydispense(buttn) {
+    alert("Key has been dispensed!");
+		buttn.style.display = "none";
+}
+function returncar(){
+alert("Thank you test driving!");
+location.href = '/selection';
+}
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Car Kiosk</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+           
+    <ul>
+      <li id="title"><a href="/~ingrassg">Car Kiosk</a><li>
+      <li><a href="/~ingrassg/login">login</a></li>
+      <li><a href="/~ingrassg/signup">Sign Up</a></li>
+      <li><a href="/~ingrassg/insertkey">Insert Key</a><li>
+      <li><a href="/~ingrassg/car-selection">Purchase a Car</a><li>
+    </ul>
+
+<h1>Test Drive</h1>
+
+<h3>Please Place Your License in the Kiosk to be Scanned.</h3>
+<p>Please press "Test Drive!", press okay on the alert, then start your test drive timer.</p>
+
+<button onclick="keydispense()" type="button">Test Drive!</button>
+<button type="button" onclick="location.href = '/~ingrassg/drivetimer';">Driving Timer</button>
+
+<script>
+function keydispense() {
+    alert("Key has been dispensed!");
+}
+</script>
+
+
+</body></html>

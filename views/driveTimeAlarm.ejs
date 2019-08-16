@@ -1,24 +1,29 @@
-
+<% include partials/header %>
         <script type="text/javascript">
-var waitTime = 3600;
+var waitTime = 20;
 function timeout(setTime) {
     if(setTime != null){
         waitTime = setTime;
     }
     document.body.innerHTML = waitTime;
     if (waitTime < 0) {
-        waitTime = 3600;
-        document.body.innerHTML = '<input type="button" value="Click" onclick="timeout();" />';
+        waitTime = 20;
+        document.body.innerHTML = "<a href='/selection'>Select Another Car</a> <a href='/payment'>Purchase Current Car</a>";
         return;
-    } else {
-        waitTime--;
     }
-    setTimeout("timeout()", 1000);
+	else {
+        waitTime--;
+				if (waitTime == 0){
+					alert("TIME UP! PLEASE RETURN CAR!");
+				}
+    }
+
+    setTimeout("timeout()", 20);
 }
+
 
 </script>
 
-<% include partials/header %>
 
 <h1>Test Drive</h1>
 
@@ -26,7 +31,4 @@ function timeout(setTime) {
 
 
   <input type="button" value="Crank up the car" style="#444444;width:240px;height:80px;border:2px #9999FF dashed;" onclick="timeout();" />
-
-<% include partials/footer %>
-
 </body></html>
